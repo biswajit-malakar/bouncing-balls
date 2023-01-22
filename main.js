@@ -68,10 +68,11 @@ const devilBall = {
    x : width/2,
    y : height/2,
    size : 20,
+   color : 'rgb(255, 255, 255)',
    draw : function() {
       ctx.beginPath();
       ctx.lineWidth = 5;
-      ctx.strokeStyle = 'rgb(255, 255, 255)';
+      ctx.strokeStyle = this.color;
       ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
       ctx.stroke();
    },
@@ -90,6 +91,7 @@ const devilBall = {
             balls[balls.length-1] = balls[cIdx];
             balls[cIdx] = temp;
             this.size += ball.size / 10;
+            this.color = ball.color;
             balls.pop();
          }
       }
