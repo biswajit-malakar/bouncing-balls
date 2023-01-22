@@ -68,7 +68,7 @@ const devilBall = {
    x : width/2,
    y : height/2,
    size : 20,
-   color : 'rgb(255, 255, 255)',
+   color : `rgb(255, 255, 255)`,
    draw : function() {
       ctx.beginPath();
       ctx.lineWidth = 5;
@@ -102,14 +102,17 @@ const devilBall = {
 function loop() {
    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
    ctx.fillRect(0, 0,  width, height);
+  
    displyBallCount();
-   for (const ball of balls) {
+  
+  for (const ball of balls) {
      ball.draw();
      ball.update_location();
-   }
-   devilBall.draw();
+  }
+   
+  devilBall.draw();
 
-   requestAnimationFrame(loop);
+  requestAnimationFrame(loop);
 }
 
 loop();
@@ -123,7 +126,6 @@ canvas.addEventListener('touchmove', (event) => {
    devilBall.collisionDetect();
    let touch = event.targetTouches[0];
    devilBall.update_location(touch.pageX, touch.pageY);
-   console.log(touch.pageX, touch.pageY);
 });
 
 
