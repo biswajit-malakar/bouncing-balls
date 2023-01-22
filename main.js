@@ -119,8 +119,9 @@ canvas.addEventListener('mousemove', (position) => {
 });
 canvas.addEventListener('touchmove', (event) => {
    devilBall.collisionDetect();
-   let touch = event.touches[0];
-   devilBall.update_location(touch.screenX, touch.screenY);
+   let touch = event.targetTouches[0];
+   devilBall.update_location(touch.pageX, touch.pageY);
+   console.log(touch.pageX, touch.pageY);
 });
 
 
