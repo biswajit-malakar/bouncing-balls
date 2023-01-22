@@ -117,6 +117,10 @@ canvas.addEventListener('mousemove', (position) => {
    devilBall.collisionDetect();
    devilBall.update_location(position.clientX, position.clientY);
 });
+canvas.addEventListener('touchmove', (position) => {
+   devilBall.collisionDetect();
+   devilBall.update_location(position.clientX, position.clientY);
+});
 
 
 function displyBallCount () {
